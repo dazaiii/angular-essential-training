@@ -22,13 +22,15 @@ export class MediaItemService {
   }
 
   add(mediaItem: MediaItem) {
-    return this.http.post("mediaitems", mediaItem)
-    .pipe(catchError(this.handleError));
+    return this.http
+      .post("mediaitems", mediaItem)
+      .pipe(catchError(this.handleError));
   }
 
   delete(mediaItem: MediaItem) {
-    return this.http.delete(`mediaitems/${mediaItem.id}`)
-    .pipe(catchError(this.handleError);
+    return this.http
+      .delete(`mediaitems/${mediaItem.id}`)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
